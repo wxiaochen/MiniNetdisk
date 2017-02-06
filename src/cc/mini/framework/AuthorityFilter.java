@@ -49,4 +49,7 @@ public class AuthorityFilter implements Filter {
     public void destroy() {
         this.config = null;
     }
+
+    public void test(  ){
+    }
 }
