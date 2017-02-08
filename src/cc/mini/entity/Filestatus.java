@@ -21,7 +21,8 @@ public class Filestatus {
 	private Date createTime;
 	private Date lastchangeTime;
 	private int fileid;
-	private Set<Filestatus> nextFile;
+	private Set<Filestatus> files;
+	private Filestatus parentFile;
 	private User user;
 
 	@Id
@@ -99,16 +100,16 @@ public class Filestatus {
 		this.fileid = fileid;
 	}
 
-	@OneToMany(targetEntity = Filestatus.class,mappedBy = "nextFile",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name = "fatherId")
-	@OrderBy("id")
-	public Set<Filestatus> getNextFile() {
-		return nextFile;
-	}
-
-	public void setNextFile(Set<Filestatus> nextFile) {
-		this.nextFile = nextFile;
-	}
+//	@OneToMany(targetEntity = Filestatus.class,mappedBy = "nextFile",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name = "fatherId")
+//	@OrderBy("id")
+//	public Set<Filestatus> getNextFile() {
+//		return nextFile;
+//	}
+//
+//	public void setNextFile(Set<Filestatus> nextFile) {
+//		this.nextFile = nextFile;
+//	}
 
 	@ManyToOne(targetEntity = User.class)
 	@JoinTable(name = "user_files",
@@ -121,5 +122,24 @@ public class Filestatus {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@OneToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,mappedBy = "parentFile")
+	public Set<Filestatus> getFiles() {
+		return files;
+	}
+
+	public void setFiles(Set<Filestatus> files) {
+		this.files = files;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "parentId")
+	public Filestatus getParentFile() {
+		return parentFile;
+	}
+
+	public void setParentFile(Filestatus parentFile) {
+		this.parentFile = parentFile;
 	}
 }
