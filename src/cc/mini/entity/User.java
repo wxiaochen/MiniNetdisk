@@ -17,8 +17,9 @@ public class User {
 	private String userName;
 	private String realName;
 	private String password;
-	private int friendId;
 	private Set<Filestatus> filestatus = new HashSet<> ();
+	private Set<User>users = new HashSet<User> (0);
+	private User parentUser;
 
 	@Id
 	@Column(name = "id")
@@ -63,14 +64,6 @@ public class User {
 		this.password = password;
 	}
 
-	public int getFriendId() {
-		return friendId;
-	}
-
-	public void setFriendId(int friendId) {
-		this.friendId = friendId;
-	}
-
 	@OneToMany(targetEntity = Filestatus.class,cascade = CascadeType.ALL)
 	@JoinTable(name = "user_files",
 				joinColumns = @JoinColumn(name = "userId",referencedColumnName = "id"),
@@ -82,5 +75,24 @@ public class User {
 
 	public void setFilestatus(Set<Filestatus> filestatus) {
 		this.filestatus = filestatus;
+	}
+
+	@OneToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,mappedBy = "parentUser")
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "friendId")
+	public User getParentUser() {
+		return parentUser;
+	}
+
+	public void setParentUser(User parentUser) {
+		this.parentUser = parentUser;
 	}
 }
