@@ -25,9 +25,11 @@
 	<context:property-placeholder location="classpath:*.properties" />
 	
 	<!-- 文件上传 -->
-	<bean id="multipartResolver"
+	 <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		p:defaultEncoding="utf-8" />
+
+
 
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">

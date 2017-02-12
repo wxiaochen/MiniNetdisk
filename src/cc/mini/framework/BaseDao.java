@@ -4,6 +4,7 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.CriteriaSpecification;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class BaseDao<T, PK extends Serializable> {
 
 	private Class<T> entityClass;

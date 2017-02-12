@@ -95,4 +95,8 @@ public class User {
     public void setParentUser(User parentUser) {
         this.parentUser = parentUser;
     }
+
+    public User (){
+
+    }
 }
