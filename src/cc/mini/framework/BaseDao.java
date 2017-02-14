@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-@Repository
 public class BaseDao<T, PK extends Serializable> {
 
 	private Class<T> entityClass;

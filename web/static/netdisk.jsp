@@ -9,9 +9,9 @@
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="basic" style="background-color:#548B54;width:1000px;height:1100px;">
+<div id="basic" style="background-color:#548B54;width:100%;height:100%;">
 	<!-- 顶部logo，登录级个人信息 -->
-	<div id="top" style="background:#EFF4F8;height:100px;">
+	<div id="top" style="background:#EFF4F8;width:1360px;height:100px;">
 		<table id="header" width="100%" height="100px">
 			<tr >
 				<td>
@@ -22,7 +22,7 @@
 		</table>
 	</div>
 	<!-- 中心区域 -->
-	<div id="middle" style="background-color:#654654;width:100%;height:670px;">
+	<div id="middle" style="background-color:#654654;width:1360px;height:670px;">
 		<!-- 左侧菜单 -->
 		<div id="middle_left" style="background-color:#EFF4F8;width:20%;height:100%;float:left">
 			<ul class="nav nav-pills nav-stacked" style="max-width:360px;">

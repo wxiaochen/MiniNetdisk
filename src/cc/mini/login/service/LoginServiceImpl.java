@@ -22,7 +22,6 @@ public class LoginServiceImpl {
     private LoginDaoImpl loginDaoImpl;
 
     public User login(String name,String password){
-        //System.out.println("service user and password"+name+password);
         return this.loginDaoImpl.findByNameAndPwd(name,password);
     }
 }

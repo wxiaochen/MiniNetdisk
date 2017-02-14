@@ -9,7 +9,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container" style="width:400px; margin-top:180px;">
@@ -27,7 +27,7 @@
 		</div>
 		<div class="input-group" style="margin-bottom:20px;">
 			<input type="submit" class="btn btn-info" style="width:95px;background:#46A3FF; color:white;" value="登录" >
-			<a href="regist.jsp" style="text-decoration:none;font-size:20px; margin-left:90px;">点我注册</a>
+			<a href="/static/regist.jsp" style="text-decoration:none;font-size:20px; margin-left:90px;">点我注册</a>
 		</div>
 	</form>
 </div>
