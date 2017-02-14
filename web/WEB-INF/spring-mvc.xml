@@ -16,13 +16,12 @@
 	<!-- 将无法mapping到Controller的path交给default servlet handler处理 -->		
 	<mvc:default-servlet-handler/>
 	<mvc:resources mapping="/admin/assets/images/**" location="/admin/assets/images/" />
-	<mvc:resources mapping="/admin/assets/css/**" location="/admin/assets/css/" />
-	<mvc:resources mapping="/admin/assets/js/**" location="/admin/assets/js/" />
+	<mvc:resources mapping="/static/css/**" location="/static/css/" />
+	<mvc:resources mapping="/static/js/**" location="/static/js/" />
 
 	<!-- 定义JSP文件的位置 --> 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value=""/>
 		<property name="suffix" value=".jsp"/>
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
 	</bean>
 </beans>

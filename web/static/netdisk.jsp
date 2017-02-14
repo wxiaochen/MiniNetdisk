@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 	<title>MiniNetDisk</title>
@@ -16,7 +17,7 @@
 			<tr >
 				<td>
 					<p style="color:#46A3FF; font-size:46px; margin-left:46px; margin-bottom:1px;">Mini云盘</p>
-					<p style="color:#708090; font-size:16px; margin-left:88%">欢迎，jack，<a>点我注销</a></p>
+					<p style="color:#708090; font-size:16px; margin-left:88%">欢迎，${user.userName}，<a>点我注销</a></p>
 				</td>
 			</tr>
 		</table>
@@ -126,62 +127,19 @@
 					</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
-					<tr>
-						<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
-						<td>
-							<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
-						</td>
-						<td>Anna</td>
-						<td>2011-11-1</td>
-					</tr>
+
+					<c:forEach items="FileList" var="myFile">
+						<tr>
+							<td style="padding-left:30px"><input type="checkbox" name="id[]" value="1" /></td>
+							<td>
+								<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="40" height="30"><span>java大数据</span>
+							</td>
+							<td>Anna</td>
+							<td>2011-11-1</td>
+						</tr>
+					</c:forEach>
+
+
 					<tr>
 						<td style="padding:30px 0px 30px 30px;"><input type="checkbox" id="checkall"/>全选 </td>
 						<td style="padding-left:20px;padding-top:20px;">

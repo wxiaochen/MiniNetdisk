@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Jupiter on 2017/2/12.
@@ -18,9 +19,10 @@ public class RegisterController {
     private RegistService registService;
 
     @RequestMapping("regist")
-    public String regist(User user){
+    public String regist(User user, HttpSession session){
         registService.save(user);
-        return "/static/netdisk";
+        session.setAttribute("LoginUser",user);
+        return "/netdisk/list";
     }
 
 }

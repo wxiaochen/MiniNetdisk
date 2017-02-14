@@ -30,7 +30,7 @@ public class LoginController {
         if(user != null){
             session.setAttribute("user",user );
             session.setMaxInactiveInterval(7*24*60*60);
-            return "redirect:/static/netdisk.jsp";
+            return "redirect:/netdisk/list";
         } else {
             System.out.println("user is null");
             return "redirect:/static/login.jsp";
